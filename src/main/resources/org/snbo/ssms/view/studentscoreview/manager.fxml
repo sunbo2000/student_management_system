@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<AnchorPane maxHeight="760.0" maxWidth="1480.0" minHeight="760.0" minWidth="1440.0" prefHeight="760.0"
+            prefWidth="1480.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.snbo.ssms.view.studentview.StudentManagerController">
+    <children>
+
+        <Label layoutX="1400" layoutY="18.0" prefHeight="30.0" prefWidth="30.0" styleClass="avatar1"
+               stylesheets="@../manager.css"/>
+        <Pane fx:id="pane" layoutX="250.0" prefHeight="760.0" prefWidth="1200.0">
+            <HBox layoutY="25.0" prefHeight="50.0" prefWidth="1000.0">
+                <TextField fx:id="searchSid" onKeyPressed="#enter" onKeyReleased="#checkSid" prefHeight="23.0"
+                           prefWidth="180.0" promptText="学号"/>
+                <Label prefWidth="10"/>
+                <TextField fx:id="searchCid" onKeyPressed="#enter" onKeyReleased="#checkCid" prefHeight="23.0"
+                           prefWidth="180.0" promptText="班级"/>
+                <Label prefWidth="10"/>
+                <TextField fx:id="searchName" onKeyPressed="#enter" prefHeight="23.0" prefWidth="180.0"
+                           promptText="姓名"/>
+
+                <Label prefWidth="20"/>
+                <Button mnemonicParsing="false" onAction="#search" prefHeight="20.0" prefWidth="53.0" text="查询"/>
+                <Label prefWidth="10"/>
+                <Button layoutY="25.0" mnemonicParsing="false" onAction="#flush" prefHeight="20.0" prefWidth="53.0"
+                        text="刷新"/>
+            </HBox>
+            <HBox layoutY="45.0" prefHeight="50.0" prefWidth="1000.0">
+                <Label fx:id="tip1" layoutY="25.0" prefHeight="23.0" prefWidth="180.0" textFill="#ed2c00">
+                </Label>
+                <Label fx:id="tip2" layoutY="25.0" prefHeight="23.0" prefWidth="180.0" textFill="#ed2c00">
+                </Label>
+            </HBox>
+
+
+            <TableView fx:id="tableView" layoutY="80.0" prefHeight="625.0" prefWidth="1200.0"
+                       stylesheets="@../manager.css">
+                <columns>
+                    <TableColumn fx:id="id" prefWidth="140.0" styleClass="table" text="学号"/>
+                    <TableColumn fx:id="course" prefWidth="140.0" styleClass="table" text="班级"/>
+                    <TableColumn fx:id="name" prefWidth="140.0" styleClass="table" text="姓名"/>
+                    <TableColumn fx:id="column1" prefWidth="110.0" styleClass="table">
+                        <graphic>
+                            <MenuButton mnemonicParsing="false" prefHeight="23.0" prefWidth="4.0" minWidth="20">
+                                <items>
+                                    <MenuItem onAction="#sort1" mnemonicParsing="false" text="正序"/>
+                                    <MenuItem onAction="#reverseSort1" mnemonicParsing="false" text="倒序"/>
+                                </items>
+                            </MenuButton>
+                        </graphic>
+                    </TableColumn>
+                    <TableColumn fx:id="column2" prefWidth="110.0" styleClass="table">
+                        <graphic>
+                            <MenuButton mnemonicParsing="false" prefHeight="23.0" prefWidth="4.0" minWidth="20">
+                                <items>
+                                    <MenuItem onAction="#sort2" mnemonicParsing="false" text="正序"/>
+                                    <MenuItem onAction="#reverseSort2" mnemonicParsing="false" text="倒序"/>
+                                </items>
+                            </MenuButton>
+                        </graphic>
+                    </TableColumn>
+                    <TableColumn fx:id="column3" prefWidth="110.0" styleClass="table" text="Java 程序设计">
+                        <graphic>
+                            <MenuButton mnemonicParsing="false" prefHeight="23.0" prefWidth="4.0" minWidth="20">
+                                <items>
+                                    <MenuItem onAction="#sort3" mnemonicParsing="false" text="正序"/>
+                                    <MenuItem onAction="#reverseSort3" mnemonicParsing="false" text="倒序"/>
+                                </items>
+                            </MenuButton>
+                        </graphic>
+                    </TableColumn>
+                    <TableColumn fx:id="column4" prefWidth="110.0" styleClass="table" text="Python">
+                        <graphic>
+                            <MenuButton mnemonicParsing="false" prefHeight="23.0" prefWidth="4.0" minWidth="20">
+                                <items>
+                                    <MenuItem onAction="#sort4" mnemonicParsing="false" text="正序"/>
+                                    <MenuItem onAction="#reverseSort4" mnemonicParsing="false" text="倒序"/>
+                                </items>
+                            </MenuButton>
+                        </graphic>
+                    </TableColumn>
+                    <TableColumn fx:id="column5" prefWidth="110.0" styleClass="table" text="C语言">
+                        <graphic>
+                            <MenuButton mnemonicParsing="false" prefHeight="23.0" prefWidth="4.0" minWidth="20">
+                                <items>
+                                    <MenuItem onAction="#sort5" mnemonicParsing="false" text="正序"/>
+                                    <MenuItem onAction="#reverseSort5" mnemonicParsing="false" text="倒序"/>
+                                </items>
+                            </MenuButton>
+                        </graphic>
+                    </TableColumn>
+
+                    <TableColumn fx:id="column6" prefWidth="110.0" styleClass="table" text="数据结构">
+                        <graphic>
+                            <MenuButton mnemonicParsing="false" prefHeight="23.0" prefWidth="4.0" minWidth="20">
+                                <items>
+                                    <MenuItem onAction="#sort6" mnemonicParsing="false" text="正序"/>
+                                    <MenuItem onAction="#reverseSort6" mnemonicParsing="false" text="倒序"/>
+                                </items>
+                            </MenuButton>
+                        </graphic>
+                    </TableColumn>
+                    <TableColumn fx:id="column7" prefWidth="110.0" styleClass="table" text="数据结构A">
+                        <graphic>
+                            <MenuButton mnemonicParsing="false" prefHeight="23.0" prefWidth="4.0" minWidth="20">
+                                <items>
+                                    <MenuItem onAction="#sort7" mnemonicParsing="false" text="正序"/>
+                                    <MenuItem onAction="#reverseSort7" mnemonicParsing="false" text="倒序"/>
+                                </items>
+                            </MenuButton>
+                        </graphic>
+                    </TableColumn>
+                    <TableColumn fx:id="column8" prefWidth="110.0" styleClass="table" text="数据结构A">
+                        <graphic>
+                            <MenuButton mnemonicParsing="false" prefHeight="23.0" prefWidth="4.0" minWidth="20">
+                                <items>
+                                    <MenuItem onAction="#sort8" mnemonicParsing="false" text="正序"/>
+                                    <MenuItem onAction="#reverseSort8" mnemonicParsing="false" text="倒序"/>
+                                </items>
+                            </MenuButton>
+                        </graphic>
+                    </TableColumn>
+                    <TableColumn fx:id="column9" prefWidth="110.0" styleClass="table" text="数据结构A">
+                        <graphic>
+                            <MenuButton mnemonicParsing="false" prefHeight="23.0" prefWidth="4.0" minWidth="20">
+                                <items>
+                                    <MenuItem onAction="#sort8" mnemonicParsing="false" text="正序"/>
+                                    <MenuItem onAction="#reverseSort8" mnemonicParsing="false" text="倒序"/>
+                                </items>
+                            </MenuButton>
+                        </graphic>
+                    </TableColumn>
+                    <TableColumn prefWidth="110.0" styleClass="table" text="操作">
+                        <columns>
+                            <TableColumn fx:id="opera1" prefWidth="73.0" styleClass="table" text="修改"/>
+                            <TableColumn fx:id="opera2" prefWidth="72.0" styleClass="table" text="删除"/>
+                        </columns>
+                    </TableColumn>
+                </columns>
+            </TableView>
+
+            <HBox fx:id="hBox" layoutX="250.0" layoutY="720.0" prefHeight="100.0" prefWidth="646.0">
+                <children>
+                </children>
+            </HBox>
+        </Pane>
+
+        <Pane fx:id="pane1" layoutX="250.0" layoutY="45" prefHeight="760.0" prefWidth="1200.0">
+            <GridPane layoutX="52.0" prefHeight="92.0" prefWidth="700.0">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.20001220703125" minWidth="10.0"
+                                       prefWidth="34.39998168945313"/>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="10.0" prefWidth="90.0"/>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.5999755859375" minWidth="10.0"
+                                       prefWidth="33.60003662109375"/>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="100.0"/>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.20003662109374" minWidth="10.0"
+                                       prefWidth="32.79997558593749"/>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="130.0"/>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.20003662109374" minWidth="10.0"
+                                       prefWidth="33.59996337890624"/>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="110.0"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                </rowConstraints>
+                <children>
+                    <Label prefHeight="15.0" prefWidth="33.0" text="姓名 :" GridPane.columnIndex="2"/>
+                    <Label fx:id="modifyName" prefHeight="15.0" prefWidth="103.0" text="张三" GridPane.columnIndex="3"/>
+                    <Label prefHeight="15.0" prefWidth="33.0" text="专业 :" GridPane.columnIndex="4"/>
+                    <Label fx:id="modifyMajor" text="计算机" GridPane.columnIndex="5"/>
+                    <Label prefHeight="15.0" prefWidth="33.0" text="班级 :" GridPane.columnIndex="6"/>
+                    <Label fx:id="modifyClass" prefHeight="15.0" prefWidth="66.0" text="04012004"
+                           GridPane.columnIndex="7"/>
+                    <Label prefHeight="15.0" prefWidth="33.0" text="学号 :"/>
+                    <Label fx:id="modifyId" prefHeight="15.0" prefWidth="82.0" text="2022100" GridPane.columnIndex="1"/>
+                </children>
+            </GridPane>
+            <GridPane layoutX="52.0" layoutY="30.0" prefHeight="400.0" prefWidth="278.0">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="230.20001220703125" minWidth="10.0"
+                                       prefWidth="148.7999755859375"/>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="252.20001220703125" minWidth="10.0"
+                                       prefWidth="80.60002441406249"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="30.0" prefHeight="60.0" vgrow="SOMETIMES"/>
+                    <RowConstraints minHeight="30.0" prefHeight="60.0" vgrow="SOMETIMES"/>
+                    <RowConstraints minHeight="30.0" prefHeight="60.0" vgrow="SOMETIMES"/>
+                    <RowConstraints minHeight="30.0" prefHeight="60.0" vgrow="SOMETIMES"/>
+                    <RowConstraints minHeight="30.0" prefHeight="60.0" vgrow="SOMETIMES"/>
+                    <RowConstraints minHeight="30.0" prefHeight="60.0" vgrow="SOMETIMES"/>
+                    <RowConstraints minHeight="30.0" prefHeight="60.0" vgrow="SOMETIMES"/>
+                </rowConstraints>
+                <children>
+                    <Label fx:id="c1" prefHeight="60.0" prefWidth="143.0" text="课程一" GridPane.rowIndex="1"/>
+                    <Label fx:id="c2" prefHeight="60.0" prefWidth="143.0" text="课程二" GridPane.rowIndex="2"/>
+                    <Label fx:id="c3" prefHeight="60.0" prefWidth="143.0" text="课程三" GridPane.rowIndex="3"/>
+                    <Label fx:id="c4" prefHeight="60.0" prefWidth="143.0" text="课程四" GridPane.rowIndex="4"/>
+                    <Label fx:id="c5" prefHeight="60.0" prefWidth="143.0" text="课程五" GridPane.rowIndex="5"/>
+                    <Label fx:id="c6" prefHeight="60.0" prefWidth="143.0" text="课程六" GridPane.rowIndex="6"/>
+                    <Label fx:id="c7" prefHeight="60.0" prefWidth="143.0" text="课程七" GridPane.rowIndex="7"/>
+                    <TextField fx:id="s1" prefHeight="30.0" onKeyReleased="#checkScore" prefWidth="120.0"
+                               GridPane.columnIndex="1"
+                               GridPane.rowIndex="1"/>
+                    <TextField fx:id="s2" prefHeight="30.0" onKeyReleased="#checkScore" prefWidth="120.0"
+                               GridPane.columnIndex="1"
+                               GridPane.rowIndex="2"/>
+                    <TextField fx:id="s3" prefHeight="30.0" onKeyReleased="#checkScore" prefWidth="120.0"
+                               GridPane.columnIndex="1"
+                               GridPane.rowIndex="3"/>
+                    <TextField fx:id="s4" prefHeight="30.0" onKeyReleased="#checkScore" prefWidth="120.0"
+                               GridPane.columnIndex="1"
+                               GridPane.rowIndex="4"/>
+                    <TextField fx:id="s5" prefHeight="30.0" onKeyReleased="#checkScore" prefWidth="120.0"
+                               GridPane.columnIndex="1"
+                               GridPane.rowIndex="5"/>
+                    <TextField fx:id="s6" prefHeight="30.0" onKeyReleased="#checkScore" prefWidth="120.0"
+                               GridPane.columnIndex="1"
+                               GridPane.rowIndex="6"/>
+                    <TextField fx:id="s7" prefHeight="30.0" onKeyReleased="#checkScore" prefWidth="120.0"
+                               GridPane.columnIndex="1"
+                               GridPane.rowIndex="7"/>
+                </children>
+            </GridPane>
+
+            <Label fx:id="tip3" layoutX="491.0" layoutY="350" textFill="red"/>
+            <Button layoutX="595.0" layoutY="395.0" onAction="#update" mnemonicParsing="false" prefHeight="23.0"
+                    prefWidth="66.0"
+                    text="确 定"/>
+            <Button layoutX="491.0" layoutY="395.0" onAction="#flush" mnemonicParsing="false" prefHeight="23.0"
+                    prefWidth="66.0"
+                    text="取 消"/>
+        </Pane>
+
+        <VBox layoutX="60.0" layoutY="80.0" prefHeight="700.0" prefWidth="140.0">
+            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="130.0" text="成绩信息"/>
+            <Button onAction="#searchStudent" mnemonicParsing="false" prefHeight="35.0" prefWidth="130.0"
+                    text="学生信息"/>
+            <Button onAction="#searchCourse" mnemonicParsing="false" prefHeight="35.0" prefWidth="130.0"
+                    text="课程信息"/>
+            <Button onAction="#searchManager" mnemonicParsing="false" prefHeight="35.0" prefWidth="130.0"
+                    text="管理员信息"/>
+        </VBox>
+
+    </children>
+</AnchorPane>

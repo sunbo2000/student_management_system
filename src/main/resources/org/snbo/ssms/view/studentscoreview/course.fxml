@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+<AnchorPane maxHeight="760.0" maxWidth="1480.0" minHeight="760.0" minWidth="1440.0" prefHeight="760.0"
+            prefWidth="1480.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.snbo.ssms.view.studentview.CourseViewController">
+
+    <children>
+        <Label layoutX="1400" layoutY="18.0" prefHeight="30.0" prefWidth="30.0" styleClass="avatar1"
+               stylesheets="@../manager.css"/>
+        <Pane fx:id="pane" layoutX="250.0" prefHeight="760.0" prefWidth="1200.0">
+            <HBox layoutY="25.0" prefHeight="50.0" prefWidth="1000.0">
+                <Button layoutY="25.0" mnemonicParsing="false" onAction="#addCourse" prefHeight="20.0"
+                        prefWidth="120.0"
+                        text="添加课程信息">
+                </Button>
+            </HBox>
+
+
+            <TableView fx:id="tableView" layoutY="80.0" prefHeight="625.0" prefWidth="1200.0"
+                       stylesheets="@../manager.css">
+                <columns>
+                    <TableColumn fx:id="id" prefWidth="150.0" styleClass="table" text="课程编号"/>
+                    <TableColumn fx:id="title" prefWidth="300.0" styleClass="table" text="课程名"/>
+                    <TableColumn prefWidth="300.0" styleClass="table" text="操作">
+                        <columns>
+                            <TableColumn fx:id="opera1" prefWidth="150.0" styleClass="table" text="修改"/>
+                            <TableColumn fx:id="opera2" prefWidth="150.0" styleClass="table" text="删除"/>
+                        </columns>
+                    </TableColumn>
+                </columns>
+            </TableView>
+        </Pane>
+
+        <Pane fx:id="pane1" layoutX="300.0" layoutY="36.0" prefHeight="218.0" prefWidth="388.0">
+            <children>
+                <Label layoutX="43.0" layoutY="95.0" prefHeight="23.0" prefWidth="70.0" text="课程名: ">
+                    <font>
+                        <Font size="17.0"/>
+                    </font>
+                </Label>
+                <TextField fx:id="courseName" onKeyReleased="#checkName" layoutX="123.0" layoutY="94.0">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </TextField>
+                <Label fx:id="tip5" layoutX="123" layoutY="130" textFill="red"/>
+                <Button onAction="#flush" layoutX="168.0" layoutY="166.0" mnemonicParsing="false" prefHeight="23.0"
+                        prefWidth="52.0"
+                        text="取 消"/>
+                <Button onAction="#update" layoutX="239.0" layoutY="166.0" mnemonicParsing="false" prefHeight="23.0"
+                        prefWidth="59.0"
+                        text="确 定"/>
+                <Label layoutX="43.0" layoutY="14.0" prefHeight="34.0" prefWidth="198.0" text="修改课程信息">
+                    <font>
+                        <Font size="24.0"/>
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+
+        <Pane fx:id="pane2" layoutX="300.0" layoutY="36.0" prefHeight="218.0" prefWidth="388.0">
+            <children>
+                <Label layoutX="43.0" layoutY="95.0" prefHeight="23.0" prefWidth="70.0" text="课程名: ">
+                    <font>
+                        <Font size="17.0"/>
+                    </font>
+                </Label>
+                <TextField fx:id="addCourseName" onKeyReleased="#checkName1" layoutX="123.0" layoutY="94.0">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </TextField>
+                <Label fx:id="tip6" layoutX="123" layoutY="130" textFill="red"/>
+                <Button onAction="#flush" layoutX="168.0" layoutY="166.0" mnemonicParsing="false" prefHeight="23.0"
+                        prefWidth="52.0"
+                        text="取 消"/>
+                <Button onAction="#add" layoutX="239.0" layoutY="166.0" mnemonicParsing="false" prefHeight="23.0"
+                        prefWidth="59.0"
+                        text="确 定"/>
+                <Label layoutX="43.0" layoutY="14.0" prefHeight="50.0" prefWidth="198.0" text="添加课程信息">
+                    <font>
+                        <Font size="24.0"/>
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <VBox layoutX="60.0" layoutY="80.0" prefHeight="700.0" prefWidth="140.0">
+            <Button onAction="#searchScore" mnemonicParsing="false" prefHeight="35.0" prefWidth="130.0"
+                    text="成绩信息"/>
+            <Button onAction="#searchStudent" mnemonicParsing="false" prefHeight="35.0" prefWidth="130.0"
+                    text="学生信息"/>
+            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="130.0" text="课程信息"/>
+            <Button onAction="#searchManager" mnemonicParsing="false" prefHeight="35.0" prefWidth="130.0"
+                    text="管理员信息"/>
+        </VBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="550.0" styleClass="pane" stylesheets="@land.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.snbo.ssms.view.LoginController">
+    <children>
+        <Label fx:id="system" layoutX="170.0" layoutY="40.0" prefHeight="25.0" prefWidth="300.0" textFill="#000">
+            <font>
+                <Font size="25.0" />
+            </font>
+        </Label>
+        <Button layoutX="100.0" layoutY="263.0" mnemonicParsing="false" onMouseClicked="#loadIn" prefHeight="10.0" prefWidth="325.0" style="-fx-background-color: #319e76; -fx-color: #000;" text="登 录">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Button>
+
+        <PasswordField fx:id="password" layoutX="100.0" layoutY="185.0" prefHeight="10.0" prefWidth="331.0" promptText="密  码 ">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </PasswordField>
+
+        <TextField fx:id="username" layoutX="100.0" layoutY="130.0" prefHeight="10.0" prefWidth="331.0" promptText="用户名">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </TextField>
+
+        <Label alignment="BOTTOM_LEFT" layoutX="60.0" layoutY="132.0" prefHeight="30.0" prefWidth="30.0" styleClass="user" stylesheets="@land.css" />
+        <Label alignment="BOTTOM_LEFT" layoutX="60.0" layoutY="187.0" prefHeight="30.0" prefWidth="30.0" styleClass="pwd" stylesheets="@land.css" />
+        <Label fx:id="prompt" layoutX="210.0" layoutY="228.0" prefHeight="25.0" prefWidth="200.0" textFill="#ed2c00">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+    </children>
+</Pane>

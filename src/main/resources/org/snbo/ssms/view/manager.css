@@ -1,0 +1,9 @@
+.avatar1{
+    -fx-background-image: url(img/User.png);
+    -fx-opacity: 0.9;
+    -fx-background-size:100% 100%;
+}
+
+.table{
+    -fx-alignment: center;
+}
